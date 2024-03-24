@@ -1,0 +1,212 @@
+/* Group project */
+/* Style the heading-center div on the home page */
+.heading-center{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-preview{
+    margin:5%;
+    padding:8px;
+}
+.menu-card{
+    border: 2px solid rgb(96, 87, 87);
+    border-radius: 12px;
+    margin: 6px;
+    width:50%;
+}
+.menu-card h2{
+    background: linear-gradient(to right, #232526, #414345);
+    padding: 12%;
+    margin: 0%;
+}
+.menu-description{
+    padding: 8%;
+}
+
+.link-button:link, .link-button:visited {
+    background-color: rgb(190, 190, 3);
+    border-radius: 8px;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link-button:hover, .link-button:active {
+    background-color: rgb(202, 202, 81);
+}
+
+#about-description{
+    padding: 7%;
+    background-color: rgba(61, 56, 56, 0.474);
+}
+/* Style the about-card div on the home page */
+
+#about-card{
+    background: linear-gradient(6deg, rgba(61, 60, 60, 0.5) 0%, rgba(78, 77, 76, 0.6) 100%),url('https://t3.ftcdn.net/jpg/03/07/75/90/240_F_307759003_iyOPUqKa6yy6a6tpUW0BQ4CSt38OMHTv.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0%;
+    padding: 5%;
+    position: relative;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+#about-description a{
+    text-decoration: none;
+}
+
+/* Style the figcaption */
+figcaption{
+    text-align: center;
+}
+.review-card{
+    margin:5%;
+    border: rgb(212, 205, 205) solid 2px;
+    padding:8px;
+}
+
+.review-description{
+    padding: 8%;
+}
+.review-description h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.review-description p {
+    margin-bottom: 1rem;
+}
+
+.review-card {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.review-card img {
+    max-width: 75px;
+    border-radius: 100%;
+    margin-top: 7%;
+    margin-left: 3%;
+}
+
+.review-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.review-details p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding: 4%;
+}
+
+.review-details h4 {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 500;
+}
+/* Style the article */
+article{
+    background: linear-gradient(6deg, rgba(146, 138, 138, 0.5) 0%, rgba(52, 51, 41, 0.6) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0%;
+    padding: 4%;
+    position: relative;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+
+    #food-top-row{
+        display: block;
+        justify-content: space-between;
+        margin:0% 2% 10% 2%;
+    }
+    .dish-image{
+        width: 80%;
+        margin: 8%;
+    }
+    #menu-block{
+        display: block;
+        justify-content: center;
+    }
+    .menu-card{
+        width:90%;
+        height: 100%;
+    }
+    .review-cards {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    .review-box {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .review-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    #food-top-row{
+        display: flex;
+        justify-content: space-between;
+        margin:0% 4% 4%;
+    }
+    .dish-image{
+        width: 100%;
+        margin: 3%;
+    }
+    #menu-block{
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu-row{
+        display: flex;
+    }
+    .review-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #food-top-row{
+        display: flex;
+        justify-content: space-between;
+        margin: 0% 2% 2%;
+    }
+    .dish-image{
+        width: 100%;
+        margin: 3%;
+    }
+    #menu-block{
+        display: flex;
+        justify-content: center;
+    }
+    .menu-row{
+        display: flex;
+    }
+    .review-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+  } 
+  

@@ -1,138 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Petpals</title>
-  <link rel="icon" type="image/x-icon" href="./img/favicon.png">
-  <link rel="stylesheet" type="text/css" href="./css/common.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Petpals</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <style>
+    <style>
+      /* Main section background color */
+      main {
+        background-color: #ffffff; /* White */
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
 
-     /* Main section background color */
-     main {
-      background-color: #ffffff; /* White */
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+      /* Card background colors */
+      #dog-card {
+        background-color: #f8d7da; /* Light red */
+      }
+    </style>
+  </head>
 
-    /* Card background colors */
-    #dog-card {
-      background-color: #f8d7da; /* Light red */
-    }
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./img/logo.png" id="main-logo" alt="main logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#main-navbar"
+            aria-controls="main-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./html/pets.html">Pets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./html/products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./html/cart.html">cart</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-
-  </style>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <main>
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="./img/logo.png" id="main-logo" alt="main logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./html/pets.html">Pets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./html/products.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./html/cart.html">cart</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-center mt-5">Welcome to Petpals</h1>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-md-4">
-          <div class="card" id="dog-card">
-            <img src="./img/starter.jpg" class="card-img-top" alt="Dog Image">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Start your day with your cute pets.</p>
-              <a href="./html/pets.html" class="btn btn-primary">See pets</a>
-            </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center mt-5">Welcome to Petpals</h1>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" id="dog-card">
-            <img src="./img/starter.jpg" class="card-img-top" alt="Dog Image">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Start your day with your cute pets.</p>
-              <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/starter.jpg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="dog-card">
-            <img src="./img/starter.jpg" class="card-img-top" alt="Dog Image">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Start your day with your cute pets.</p>
-              <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/starter.jpg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/starter.jpg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="bg-dark text-light p-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="./img/logo.png" id="footer-logo" alt="footer logo">
-          <p class="mt-3">Petpals &#169; 2023</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-4">Explore more about Petpals here</h5>
-          <ul class="list-unstyled">
-            <li><a href="./home.html" class="text-light">Home</a></li>
-            <li><a href="./html/pets.html" class="text-light">Pets</a></li>
-            <li><a href="./html/products.html" class="text-light">Products</a></li>
-            <li><a href="./html/cart.html" class="text-light">cart</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h5 class="mb-4">Why Petpals?</h5>
-          <p class="footer-company-about">Love pets. Pets love us. we support pet lovers</p>
-          <div class="footer-icons">
-            <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+    <footer class="bg-dark text-light p-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="./img/logo.png" id="footer-logo" alt="footer logo" />
+            <p class="mt-3">Petpals &#169; 2023</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-4">Explore more about Petpals here</h5>
+            <ul class="list-unstyled">
+              <li><a href="./home.html" class="text-light">Home</a></li>
+              <li><a href="./html/pets.html" class="text-light">Pets</a></li>
+              <li>
+                <a href="./html/products.html" class="text-light">Products</a>
+              </li>
+              <li><a href="./html/cart.html" class="text-light">cart</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-4">Why Petpals?</h5>
+            <p class="footer-company-about">
+              Love pets. Pets love us. we support pet lovers
+            </p>
+            <div class="footer-icons">
+              <a href="#" class="text-light"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-light"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-light"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-  
+    </footer>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>

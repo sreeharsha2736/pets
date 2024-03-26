@@ -1,0 +1,16 @@
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-img {
+  margin: auto;
+  width: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.btn {
+  width: fit-content;
+}

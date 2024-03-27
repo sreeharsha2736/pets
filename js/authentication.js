@@ -11,10 +11,8 @@ function initializeAccountsDb() {
 
 // insert account into db
 function addAccount(value) {
-    console.log(value)
   var accounts = initializeAccountsDb();
   console.log(accounts);
-  accounts.push(value);
   localStorage.setItem(databaseKey, JSON.stringify(accounts));
 }
 
@@ -32,14 +30,29 @@ function getAccountByEmail(email) {
   );
 }
 
+// encrypt password
 function encryptPassword(password) {
   return btoa(password);
 }
 
+// decrypt password
 function decryptPassword(encryptedPassword) {
   return atob(encryptedPassword);
 }
 
+const AccountsDb = {
+  getAccounts: getAccounts,
+  addAccount: addAccount,
+  getAccountByEmail: getAccountByEmail,
+};
+
+const Security = {
+  encryptPassword: encryptPassword,
+  decryptPassword: decryptPassword,
+};
+
+
+// login button handler
 function handleLoginSubmit(event) {
   event.preventDefault();
   var form = document.getElementById("loginForm");
@@ -47,14 +60,20 @@ function handleLoginSubmit(event) {
   var email = form.elements["email"].value;
   var password = form.elements["password"].value;
 
-  var account = getAccountByEmail(email);
-  if (!account || decryptPassword(account.password) != password) {
+  var account = AccountsDb.getAccountByEmail(email);
+  if (!account || Security.decryptPassword(account.password) != password) {
     var errorDiv = document.getElementById("error");
     errorDiv.textContent = "Invalid email or password";
     errorDiv.style.display = "block";
+    return;
   }
+
+  localStorage.setItem("currentUser", JSON.stringify(account));
+
+  window.location.href = '../home.html';
 }
 
+// register buton handler
 function handleRegisterSubmit(event) {
   event.preventDefault();
 
@@ -65,20 +84,19 @@ function handleRegisterSubmit(event) {
 
   var errorDiv = document.getElementById("error");
 
-
-  if(name.length < 5){
-    errorDiv.textContent = 'Name must be at least 5 characters long';
-    errorDiv.style.display = 'block';
+  if (name.length < 5) {
+    errorDiv.textContent = "Name must be at least 5 characters long";
+    errorDiv.style.display = "block";
     return;
   }
 
-  if(password.length < 6){
-    errorDiv.textContent = 'Password must be at least 6 characters long';
-    errorDiv.style.display = 'block';
+  if (password.length < 6) {
+    errorDiv.textContent = "Password must be at least 6 characters long";
+    errorDiv.style.display = "block";
     return;
   }
 
-  var account = getAccountByEmail(email);
+  var account = AccountsDb.getAccountByEmail(email);
   if (account) {
     errorDiv.textContent = "Email already in use";
     errorDiv.style.display = "block";
@@ -88,15 +106,15 @@ function handleRegisterSubmit(event) {
   var newAccount = {
     name: name,
     email: email,
-    password: encryptPassword(password),
+    password: Security.encryptPassword(password),
   };
 
-  errorDiv.textContent = '';
-  errorDiv.style.display = 'none';
+  errorDiv.textContent = "";
+  errorDiv.style.display = "none";
 
   var successDiv = document.getElementById("success");
   successDiv.textContent = "Registration successful. Proceed to login";
-  successDiv.style.display = 'block';
+  successDiv.style.display = "block";
 
   addAccount(newAccount);
 }

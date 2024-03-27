@@ -39,7 +39,11 @@
         <div class="col-md-6">
           <div class="card login-container">
             <div class="card-header text-center">Sign in to your account</div>
-            <div id="error" class="text-center mt-1" style="color: red; display: none;"></div>
+            <div
+              id="error"
+              class="text-center mt-1"
+              style="color: red; display: none"
+            ></div>
             <div class="card-body">
               <form id="loginForm">
                 <div class="form-group">
@@ -61,10 +65,18 @@
                     class="form-control"
                     placeholder="Password"
                   />
-                  <small class="form-text text-muted">Don't have an account? <a href="register.html">Register</a></small>
+                  <small class="form-text text-muted"
+                    >Don't have an account?
+                    <a href="register.html">Register</a></small
+                  >
                 </div>
                 <div class="center-btn">
-                  <input type="button" class="btn btn-primary btn-width" value="Login" onclick="handleLoginSubmit(event)">
+                  <input
+                    type="button"
+                    class="btn btn-primary btn-width"
+                    value="Login"
+                    onclick="handleLoginSubmit(event)"
+                  />
                 </div>
               </form>
             </div>

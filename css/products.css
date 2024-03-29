@@ -6,7 +6,8 @@
 
 .card-img {
   margin: auto;
-  width: 50%;
+  width: auto;
+  padding: 10px;
   height: 200px;
   object-fit: cover;
 }

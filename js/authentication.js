@@ -40,6 +40,12 @@ function decryptPassword(encryptedPassword) {
   return atob(encryptedPassword);
 }
 
+// regex to validate email
+function validateEmail(email){
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 const AccountsDb = {
   getAccounts: getAccounts,
   addAccount: addAccount,
@@ -83,6 +89,12 @@ function handleRegisterSubmit(event) {
   var password = form.elements["password"].value;
 
   var errorDiv = document.getElementById("error");
+
+  if(!validateEmail(email)){
+    errorDiv.textContent = "Invalid email. Enter valid email address";
+    errorDiv.style.display = "block";
+    return;
+  }
 
   if (name.length < 5) {
     errorDiv.textContent = "Name must be at least 5 characters long";

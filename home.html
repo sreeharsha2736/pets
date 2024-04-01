@@ -16,22 +16,35 @@
 
     <style>
       /* Main section background color */
-      main {
-        background-color: #ffffff; /* White */
-        padding-top: 50px;
-        padding-bottom: 50px;
-      }
 
+      main{
+        padding-bottom: 3%;
+      }
       /* Card background colors */
       #dog-card {
         background-color: #f8d7da; /* Light red */
       }
+      #main-image h1{
+        padding: 7%;
+        color: #c6c935;
+      }
+      #main-image{    
+        background: linear-gradient(6deg, rgba(163, 146, 146, 0.5) 0%, rgba(142, 141, 134, 0.6) 50%),url('./img/home_image.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0%;
+        padding: 10%;
+        position: relative;
+        text-shadow: 2px 2px rgb(0, 0, 0);
+      }  
+
     </style>
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">
             <img src="./img/logo.png" id="main-logo" alt="main logo" />
@@ -66,7 +79,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-success" id="loginBtn" href="./html/login.html" style="display: none;">Sign In</a>
+                <a class="btn btn-success" id="loginBtn" href="./html/login.html" style="display: none;">Signin</a>
               </li>
               <li>
                 <a class="btn btn-danger" id="logoutBtn" style="display: none;" onclick="handleLogoutButton()">Logout</a>
@@ -78,17 +91,22 @@
     </header>
 
     <main>
+      <div id="main-image">
+        <h1>
+          Welcome to Petpals
+        </h1>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="text-center mt-5">Welcome to Petpals</h1>
+            <h1 class="text-center mt-5">Pets you care</h1>
           </div>
         </div>
         <div class="row mt-5">
           <div class="col-md-4">
             <div class="card" id="dog-card">
               <img
-                src="./img/starter.jpg"
+                src="./img/petimages/img7.jpg"
                 class="card-img-top"
                 alt="Dog Image"
               />
@@ -102,7 +120,7 @@
           <div class="col-md-4">
             <div class="card" id="dog-card">
               <img
-                src="./img/starter.jpg"
+                src="./img/petimages/img3.jpg"
                 class="card-img-top"
                 alt="Dog Image"
               />
@@ -116,7 +134,59 @@
           <div class="col-md-4">
             <div class="card" id="dog-card">
               <img
-                src="./img/starter.jpg"
+                src="./img/petimages/img12.jpg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center mt-5">Supplies pets need</h1>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/bird_cage.jpeg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/pawhut.jpg"
+                class="card-img-top"
+                alt="Dog Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Start your day with your cute pets.</p>
+                <a href="./html/pets.html" class="btn btn-primary">See pets</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" id="dog-card">
+              <img
+                src="./img/food_storage.jpg"
                 class="card-img-top"
                 alt="Dog Image"
               />
@@ -131,7 +201,7 @@
       </div>
     </main>
 
-    <footer class="bg-dark text-light p-2">
+    <footer class="text-dark p-2">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
@@ -141,12 +211,12 @@
           <div class="col-md-4">
             <h5 class="mb-4">Explore more about Petpals here</h5>
             <ul class="list-unstyled">
-              <li><a href="./home.html" class="text-light">Home</a></li>
-              <li><a href="./html/pets.html" class="text-light">Pets</a></li>
+              <li><a href="./home.html" class="text-dark">Home</a></li>
+              <li><a href="./html/pets.html" class="text-dark">Pets</a></li>
               <li>
-                <a href="./html/products.html" class="text-light">Products</a>
+                <a href="./html/products.html" class="text-dark">Products</a>
               </li>
-              <li><a href="./html/cart.html" class="text-light">cart</a></li>
+              <li><a href="./html/cart.html" class="text-dark">cart</a></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -155,14 +225,14 @@
               Love pets. Pets love us. we support pet lovers
             </p>
             <div class="footer-icons">
-              <a href="#" class="text-light"
+              <a href="#" class="text-dark"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-              <a href="#" class="text-light"
+              <a href="#" class="text-dark"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-light"
+              <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-dark"
                 ><i class="fab fa-linkedin-in"></i
               ></a>
             </div>

@@ -1,16 +1,23 @@
-    /* Custom styles */
-    /* Header background color */
-    header {
-        background-color: #f8f9fa; /* Light gray */
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-  
-      /* Footer background color and text color */
-     /* Footer styling */
-  
+  /* Custom styles */
+  /* Header background color */
+  header {
+      background-color: #c6c935; /* Light gray */
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    /* Footer background color and text color */
+    /* Footer styling */
+    #main-logo, #footer-logo{
+      width: 14%;
+    }
+    main{
+      padding-top: 0%;
+    }
+
   footer{
     font-size : 12px;
+    background-color:  #c6c935;
   }
   .footer-icons a {
     color: #ffffff; /* White */
@@ -37,17 +44,17 @@
   }
   
   
-      /* Navbar link color */
-      .navbar-nav .nav-link {
-        color: #343a40; /* Dark gray */
-      }
-  
-      /* Navbar link hover color */
-      .navbar-nav .nav-link:hover {
-        color: #007bff; /* Blue */
-      }
-  
-      /* Footer link hover color */
-      .footer-nav li a:hover {
-        color: #007bff; /* Blue */
-      }
+  /* Navbar link color */
+  .navbar-nav .nav-link {
+    color: #343a40; /* Dark gray */
+  }
+
+  /* Navbar link hover color */
+  .navbar-nav .nav-link:hover {
+    color: #007bff; /* Blue */
+  }
+
+  /* Footer link hover color */
+  .footer-nav li a:hover {
+    color: #007bff; /* Blue */
+  }

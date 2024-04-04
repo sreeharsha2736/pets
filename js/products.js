@@ -30,7 +30,7 @@ $.each(products, function (index, product) {
         <h5 class="card-title">${product.title}</h5>
         <p class="card-text">${product.description}</p>
         <p class="card-text"><strong>$${product.price}</strong></p>
-        <a href="#" class="btn btn-primary"><i class="bi bi-cart-plus-fill"></i> Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="handleAddCart(petTitle='${product.title}')"><i class="bi bi-cart-plus-fill"></i> Add to Cart</a>
       </div>
     </div>
   `);
@@ -49,3 +49,31 @@ $.each(products, function (index, product) {
 if ($row.children().length > 0) {
     $container.append($row);
 }
+
+function handleAddCart(petTitle) {
+  // Retrieve cartItems from localStorage and parse it as JSON
+  var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+  if (cartItems) {
+    // If cartItems exists in localStorage
+    var existingPetIndex = cartItems.findIndex(item => item.petTitle === petTitle);
+    if (existingPetIndex !== -1) {
+      // If item already exists, increase the count
+      cartItems[existingPetIndex].count++;
+    } else {
+      // Otherwise, add new item to the list
+      cartItems.push({ petTitle: petTitle, count: 1 });
+    }
+  } else {
+    // If cartItems doesn't exist in localStorage, initialize it with a new array
+    cartItems = [{ petTitle: petTitle, count: 1 }];
+  }
+
+  // Save updated cartItems to localStorage after converting it to JSON
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  console.log(localStorage);
+  alert('Item added to cart!')
+  // redirect to cart page
+  window.location.href = 'cart.html';
+}
+

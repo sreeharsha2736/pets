@@ -19,7 +19,6 @@
     />
     <script src="../js/pets.js" defer></script>
     <script src="../js/products.js"></script>
-    <script src="../js/home.js"></script>
     <link rel="stylesheet" href="../css/products.css" />
     <style>
       /* Main section background color */
@@ -66,18 +65,20 @@
                 <a
                   class="nav-link"
                   class="btn btn-outline-info"
-                  href="./html/cart.html"
+                  href="../html/cart.html"
                 >
                   <i class="bi bi-cart"></i>
                 </a>
               </li>
-              <li>
-                <a
-                  class="btn btn-danger"
-                  id="logoutBtn"
-                  onclick="handleLogoutButton()"
-                  >Logout</a
-                >
+              <li class="nav-item" id="loginBtnContainer">
+                <a class="btn btn-success" id="loginBtn" href="./login.html">Signin</a>
+              </li>
+              <li class="nav-item" id="logoutBtnContainer" style="display: none;">
+                <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
+              </li>
+              <!-- Show user's name if logged in -->
+              <li class="nav-item">
+                <span id="userFirstName" style="display: none;"></span>
               </li>
             </ul>
           </div>
@@ -247,5 +248,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
   </body>
 </html>

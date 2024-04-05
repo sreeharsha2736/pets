@@ -1,24 +1,20 @@
-// check if user is logged in or not
-function isAuthenticated(){
-    var currentUser = localStorage.getItem('currentUser');
-    return currentUser ? true : false;
+
+var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+// Display the user's first name in navigation if logged in
+if (currentUser) {
+  var userFirstName = document.getElementById("userFirstName");
+  userFirstName.textContent = currentUser.name.split(' ')[0];
+  userFirstName.style.display = "inline"; // Show the user's first name
+  document.getElementById("loginBtnContainer").style.display = "none"; // Hide signin button
+  document.getElementById("logoutBtnContainer").style.display = "inline"; // Show logout button
+} else {
+  document.getElementById("loginBtnContainer").style.display = "inline"; // Show signin button
+  document.getElementById("logoutBtnContainer").style.display = "none"; // Hide logout button
 }
 
-
-// logout button handler
-function handleLogoutButton(){
-    localStorage.removeItem('currentUser');
-    window.location.href = '../html/login.html';
-}
-
-
-window.onload = function(){
-    if(isAuthenticated()){
-        var logoutBtn = document.getElementById('logoutBtn');
-        logoutBtn.style.display = 'block';
-    }
-    else{
-        var loginBtn = document.getElementById('loginBtn');
-        loginBtn.style.display = 'block';
-    }
+// Logout function
+function handleLogoutButton() {
+  sessionStorage.removeItem("currentUser"); // Remove user's session
+  location.reload(); // Reload the page to reflect changes
 }

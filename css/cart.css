@@ -1,0 +1,15 @@
+/* CSS styles for the product card */
+.product-card {
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 200px; /* Set width as needed */
+    height: 200px; /* Set height as needed */
+    overflow: hidden; /* Hide overflow */
+}
+
+.card-img {
+    width: 100%; /* Ensure image fills container width */
+    height: auto; /* Maintain aspect ratio */
+}

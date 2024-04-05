@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Petpals</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <!-- Bootstrap CSS -->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="./js/home.js"></script>
-
     <style>
       /* Main section background color */
 
-      main{
+      main {
         padding-bottom: 3%;
       }
+      
       /* Card background colors */
       #home-card {
         background-color: #f8d7da; /* Light red */
       }
-      #main-image h1{
+      
+      #main-image h1 {
         padding: 7%;
         color: #c6c935;
       }
-      #main-image{    
-        background: linear-gradient(6deg, rgba(163, 146, 146, 0.5) 0%, rgba(142, 141, 134, 0.6) 50%),url('./img/home_image.jpg');
+      
+      #main-image {
+        background: linear-gradient(6deg, rgba(163, 146, 146, 0.5) 0%, rgba(142, 141, 134, 0.6) 50%), url('./img/home_image.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -73,16 +71,20 @@
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item mr-4">
+              <li class="nav-item mr-4" id="cartBtnContainer">
                 <a class="nav-link" class="btn btn-outline-info" href="./html/cart.html">
                   <i class="bi bi-cart"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="btn btn-success" id="loginBtn" href="./html/login.html" style="display: none;">Signin</a>
+              <li class="nav-item" id="loginBtnContainer">
+                <a class="btn btn-success" id="loginBtn" href="./html/login.html">Signin</a>
               </li>
-              <li>
-                <a class="btn btn-danger" id="logoutBtn" style="display: none;" onclick="handleLogoutButton()">Logout</a>
+              <li class="nav-item" id="logoutBtnContainer" style="display: none;">
+                <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
+              </li>
+              <!-- Show user's name if logged in -->
+              <li class="nav-item">
+                <span id="userFirstName" style="display: none;"></span>
               </li>
             </ul>
           </div>
@@ -241,9 +243,10 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="./js/home.js"></script>
+    
   </body>
 </html>

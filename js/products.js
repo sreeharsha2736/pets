@@ -74,6 +74,6 @@ function handleAddCart(petTitle) {
   console.log(localStorage);
   alert('Item added to cart!')
   // redirect to cart page
-  window.location.href = 'cart.html';
+  // window.location.href = 'cart.html';
 }
 

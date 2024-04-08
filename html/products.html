@@ -1,136 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Petpals</title>
-    <link rel="icon" type="image/x-icon" href="./img/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="../js/products.js" defer></script>
-    <script src="../js/home.js"></script>
-    <link rel="stylesheet" href="../css/products.css" />
-    <style>
-      /* Main section background color */
-      main {
-        background-color: #ffffff; /* White */
-        padding-top: 50px;
-        padding-bottom: 50px;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Petpals</title>
 
-      /* Card background colors */
-      #dog-card {
-        background-color: #f8d7da; /* Light red */
-      }
-    </style>
-  </head>
+  
 
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="../img/logo.png" id="main-logo" alt="main logo" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#main-navbar"
-            aria-controls="main-navbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./pets.html">Pets</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="./products.html">Products</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item mr-4">
-                <a class="nav-link" class="btn btn-outline-info" href="./cart.html">
-                  <i class="bi bi-cart"></i>
-                </a>
-              </li>
-              <li class="nav-item" id="loginBtnContainer">
-                <a class="btn btn-success" id="loginBtn" href="./login.html">Signin</a>
-              </li>
-              <li class="nav-item" id="logoutBtnContainer" style="display: none;">
-                <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
-              </li>
-              <!-- Show user's name if logged in -->
-              <li class="nav-item ml-3">
-                <span id="userFirstName" style="display: none;"></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
-    <main>
-      <div class="products-container container">
+  <script src="../js/products.js" defer></script>
+  <script src="../js/home.js"></script>
+  <link rel="stylesheet" href="../css/products.css" />
+  <style>
+    /* Main section background color */
+    main {
+      background-color: #ffffff; /* White */
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    /* Card background colors */
+    #dog-card {
+      background-color: #f8d7da; /* Light red */
+    }
+
+    /* Styling for the product dialog */
+    .product-dialog-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../img/logo.png" id="main-logo" alt="main logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#main-navbar"
+        aria-controls="main-navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pets.html">Pets</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./products.html">Products</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search Products" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="handleSearch()">Search</button>
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mr-4">
+            <a class="nav-link" class="btn btn-outline-info" href="./cart.html">
+              <i class="bi bi-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item" id="loginBtnContainer">
+            <a class="btn btn-success" id="loginBtn" href="./login.html">Signin</a>
+          </li>
+          <li class="nav-item" id="logoutBtnContainer" style="display: none;">
+            <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
+          </li>
+          <!-- Show user's name if logged in -->
+          <li class="nav-item ml-3">
+            <span id="userFirstName" style="display: none;"></span>
+          </li>
+        </ul>
       </div>
-    </main>
+    </div>
+  </nav>
+</header>
 
-    <footer class="text-dark p-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img src="../img/logo.png" id="footer-logo" alt="footer logo" />
-            <p class="mt-3">Petpals &#169; 2023</p>
-          </div>
-          <div class="col-md-4">
-            <h5 class="mb-4">Explore more about Petpals here</h5>
-            <ul class="list-unstyled">
-              <li><a href="../home.html" class="text-dark">Home</a></li>
-              <li><a href="./pets.html" class="text-dark">Pets</a></li>
-              <li>
-                <a href="./products.html" class="text-dark">Products</a>
-              </li>
-              <li><a href="./cart.html" class="text-dark">cart</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5 class="mb-4">Why Petpals?</h5>
-            <p class="footer-company-about">
-              Love pets. Pets love us. we support pet lovers
-            </p>
-            <div class="footer-icons">
-              <a href="#" class="text-dark"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="text-dark"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-dark"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
+<main>
+  <div class="products-container container">
+  </div>
+</main>
+
+<footer class="text-dark p-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../img/logo.png" id="footer-logo" alt="footer logo" />
+        <p class="mt-3">Petpals &#169; 2023</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-4">Explore more about Petpals here</h5>
+        <ul class="list-unstyled">
+          <li><a href="../home.html" class="text-dark">Home</a></li>
+          <li><a href="./pets.html" class="text-dark">Pets</a></li>
+          <li>
+            <a href="./products.html" class="text-dark">Products</a>
+          </li>
+          <li><a href="./cart.html" class="text-dark">cart</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-4">Why Petpals?</h5>
+        <p class="footer-company-about">
+          Love pets. Pets love us. we support pet lovers
+        </p>
+        <div class="footer-icons">
+          <a href="#" class="text-dark"
+          ><i class="fab fa-facebook-f"></i
+            ></a>
+          <a href="#" class="text-dark"
+          ><i class="fab fa-instagram"></i
+            ></a>
+          <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-dark"
+          ><i class="fab fa-linkedin-in"></i
+            ></a>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/home.js"></script>
-  </body>
+<div id="searchDialog" title="Search Results">
+  <div id="searchResults" class="container">
+    <!-- Search results will be dynamically added here -->
+  </div>
+</div>
+
+<div id="productModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="productImages" class="carousel">
+          <!-- Lazy-loaded images placeholders -->
+          <img class="lazyload" data-src="" alt="Image 1">
+          <img class="lazyload" data-src="" alt="Image 2">
+        </div>
+        <h4 id="productTitle"></h4>
+        <p id="productDescription"></p>
+        <p id="productPrice"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $(document).on('click', '.more-details-btn', function() {
+  //Get the title of the product associated with the clicked button
+  var productTitle = $(this).data('title');
+  
+  // Find the product in the products array by title
+  var product = products.find(p => p.title === productTitle);
+  
+  if (product) {
+    // Populate modal with product details
+    $('#productTitle').text(product.title);
+    $('#productDescription').text(product.description);
+    $('#productPrice').text('$' + product.price);
+    
+    // Clear existing images in the carousel
+    $('#productImages').empty();
+    
+    // Add product images to the carousel
+    $.each([product.img, product.img2], function(index, imageUrl) {
+      $('#productImages').append('<img class="lazyload" data-src="' + imageUrl + '" alt="' + product.title + '">');
+    });
+    
+    // Initialize Lazy Load for images
+    $('.lazyload').lazyLoadXT();
+  } else {
+    console.log('Product not found');
+  }
+});
+</script>
+</body>
 </html>

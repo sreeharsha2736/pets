@@ -93,7 +93,7 @@ $(document).ready(function () {
                 Breed: ${animal.breed}<br>
                 Age: ${animal.age} years 
               </p>
-              <a href="#" class="btn btn-primary" onclick="handleAddCart(petTitle='${animal.name}')"><i class="bi bi-cart-plus-fill"></i> Add to Cart</a>
+              <a href="./appointment.html" class="btn btn-primary" onclick="Bookavisit(petTitle='${animal.name}')"><i class="bi bi-people"></i> Book a visit</a>
             </div>
           </div>
         `);

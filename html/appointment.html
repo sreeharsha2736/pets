@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <script src="../js/pets.js" defer></script>
+    <script src="../js/products.js"></script>
     <link rel="stylesheet" href="../css/products.css" />
     <style>
       /* Main section background color */
@@ -86,123 +87,38 @@
     </header>
 
     <main>
-      <section class="text-center my-5">
         <div class="container">
-          <div class="row">
-            <!-- Cat card -->
-            <div class="col-md-4">
-              <div class="card" id="cat-card">
-                <img src="../img/cats.jpg" class="card-img-top" alt="cat" />
-                <div class="card-body">
-                  <h5 class="card-title">Cats</h5>
-                  <p class="card-text">
-                    Cats are independent and playful pets to have <br />Click
-                    below to view our cat collection
-                  </p>
-                  <a href="#cats" class="btn btn-primary">View Cats</a>
+            <div class="booking-form-container bg-light p-5 border rounded">
+              <h2 class="text-center mb-4">Pet Visit Booking</h2>
+              <form>
+                <div class="form-group">
+                  <label for="clientName">client's Name</label>
+                  <input type="text" class="form-control" id="clientName" placeholder="Enter your name" required>
                 </div>
-              </div>
-            </div>
-            <!-- Dog card -->
-            <div class="col-md-4">
-              <div class="card" id="dog-card">
-                <img src="../img/dogs.jpg" class="card-img-top" alt="dog" />
-                <div class="card-body">
-                  <h5 class="card-title">Dogs</h5>
-                  <p class="card-text">
-                    Dogs are loyal and loving pets to have <br />Click below to
-                    view our dog collection
-                  </p>
-                  <a href="#dogs" class="btn btn-primary">View Dogs</a>
+                <div class="form-group">
+                  <label for="clientEmail">Email address</label>
+                  <input type="email" class="form-control" id="clientEmail" placeholder="Enter email" required>
                 </div>
-              </div>
-            </div>
-            <!-- Small Animals card -->
-            <div class="col-md-4">
-              <div class="card" id="small-animals-card">
-                <img
-                  src="../img/small_animals.jpg"
-                  class="card-img-top"
-                  alt="small animals"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Small Animals</h5>
-                  <p class="card-text">
-                    Small animals like rabbits, hamsters, and guinea pigs make
-                    great pets <br />Click below to view our small animal
-                    collection
-                  </p>
-                  <a href="#small-animals" class="btn btn-primary"
-                    >View Small Animals</a
-                  >
+                <div class="form-group">
+                  <label for="petName">Pet's Name</label>
+                  <input type="text" class="form-control" id="petName" placeholder="Pet's name" required>
                 </div>
-              </div>
-            </div>
-            <!-- Birds card -->
-            <div class="col-md-4">
-              <div class="card" id="bird-card">
-                <img src="../img/birds.avif" class="card-img-top" alt="bird" />
-                <div class="card-body">
-                  <h5 class="card-title">Birds</h5>
-                  <p class="card-text">
-                    Birds are beautiful and chirpy pets to have <br />Click
-                    below to view our bird collection
-                  </p>
-                  <a href="#birds" class="btn btn-primary">View Birds</a>
+                <div class="form-group">
+                    <label for="breed">Pet's Name</label>
+                    <input type="text" class="form-control" id="breed" placeholder="Pet's breed" required>
+                  </div>
+                <div class="form-group">
+                  <label for="Requirements">Requirements for pet</label>
+                  <textarea class="form-control" id="Requirements" rows="3" required></textarea>
                 </div>
-              </div>
-            </div>
-            <!-- Fish card -->
-            <div class="col-md-4">
-              <div class="card" id="fish-card">
-                <img src="../img/fish.jpg" class="card-img-top" alt="fish" />
-                <div class="card-body">
-                  <h5 class="card-title">Fish</h5>
-                  <p class="card-text">
-                    Fish are colorful and calming pets to have <br />Click below
-                    to view our fish collection
-                  </p>
-                  <a href="#fish" class="btn btn-primary">View Fish</a>
+                <div class="form-group">
+                  <label for="appointmentDate">Preferred Date and Time</label>
+                  <input type="datetime-local" class="form-control" id="appointmentDate" required>
                 </div>
-              </div>
-            </div>
-            <!-- Reptiles card -->
-            <div class="col-md-4">
-              <div class="card" id="reptiles-card">
-                <img
-                  src="../img/reptiles.jpg"
-                  class="card-img-top"
-                  alt="reptiles"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Reptiles</h5>
-                  <p class="card-text">
-                    Reptiles like snakes and lizards are fascinating pets to
-                    have <br />Click below to view our reptile collection
-                  </p>
-                  <a href="#reptiles" class="btn btn-primary">View Reptiles</a>
-                </div>
-              </div>
+                <button type="submit" class="btn btn-primary btn-block">Book Appointment</button>
+              </form>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="container">
-        <h2 class="text-center">Pets</h2>
-        <hr />
-        <h1 class="text-center" id="cats">🐈 Cats</h1>
-        <div class="row cats"></div>
-        <h1 class="text-center" id="dogs">🐕 Dogs</h1>
-        <div class="row dogs"></div>
-        <h1 class="text-center" id="small-animals">🐇 Small Animals</h1>
-        <div class="row small-animals"></div>
-        <h1 class="text-center" id="birds">🐦 Birds</h1>
-        <div class="row birds"></div>
-        <h1 class="text-center" id="fish">🐠 Fish</h1>
-        <div class="row fish"></div>
-        <h1 class="text-center" id="reptiles">🐢 Reptiles</h1>
-        <div class="row reptiles"></div>
-      </section>
     </main>
 
     <footer class="text-dark p-2">

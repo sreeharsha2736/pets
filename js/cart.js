@@ -13,7 +13,7 @@ $(document).ready(function() {
                     $productDiv.html(`
                         <div class="card h-100">
                             <div class="image-container">
-                                <img class="card-img" src="${product.img}" alt="${product.title}">
+                                <a href="./pets.html"><img class="card-img"  src="${product.images[0]}" alt="${product.title}"></a>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5>
@@ -30,7 +30,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $cartContainer.html('<p>Cart is empty</p>');
+            $cartContainer.html('<h1>Cart is empty</h1>');
         }
 
         // Add event listeners for delete, reduce count, and increase count buttons

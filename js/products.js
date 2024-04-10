@@ -115,13 +115,14 @@ $(document).on('click', '.more-details-btn', function () {
     // Clear existing images in the carousel
     $('#productImages').empty();
 
-    // Add product images to the carousel
-    $.each([product.images], function (index, imageUrl) {
-      $('#productImages').append('<img class="lazyload" data-src="' + imageUrl[index] + '" alt="' + product.title + '">');
-    });
+// Add product images to the carousel
+$.each(product.images, function (index, imageUrl) {
+  $('#productImages').append('<img class="lazyload" data-src="' + imageUrl + '" alt="' + product.title + '">');
+});
 
-    // Initialize Lazy Load for images
-    $('.lazyload').lazyLoadXT();
+// Initialize Lazy Load for images
+$('.lazyload').lazyLoadXT();
+
   } else {
     console.log('Product not found');
   }

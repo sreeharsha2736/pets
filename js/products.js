@@ -27,8 +27,6 @@ function displayProducts(products) {
     // Create a new div element for each product
     var $productDiv = $('<div>').addClass('col-md-4');
 
-    debugger
-
     // Set the innerHTML of the div
     $productDiv.html(`
           <div class="card h-100">

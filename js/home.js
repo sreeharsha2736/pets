@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
 // Display the user's first name in navigation if logged in
@@ -21,4 +21,3 @@ function handleLogoutButton() {
 }
 
 console.log(localStorage);
-});

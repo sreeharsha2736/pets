@@ -137,4 +137,6 @@ function handleRegisterSubmit(event) {
     successDiv.style.display = "block";
     
     addAccount(newAccount);
+    var formsubmitsuccess = document.getElementById("registerForm");
+    formsubmitsuccess.reset()
 }

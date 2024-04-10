@@ -17,7 +17,6 @@
    <!-- Custom CSS -->
    <link rel="stylesheet" type="text/css" href="../css/common.css">
    <link rel="stylesheet" href="../css/products.css">
- 
    <!-- jQuery -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <!-- jQuery UI -->
@@ -27,9 +26,10 @@
    <!-- Lazy Load XT -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.min.js"></script>
  
+
    <!-- Custom JavaScript -->
-   <script src="../js/products.js" defer></script>
-   <script src="../js/home.js"></script>
+   <script src="../js/products.js" ></script>
+
    <!-- Favicon -->
    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
   <style>
@@ -93,12 +93,13 @@
               <i class="bi bi-cart"></i>
             </a>
           </li>
-          <li class="nav-item" id="loginBtnContainer">
-            <a class="btn btn-success" id="loginBtn" href="./login.html">Signin</a>
-          </li>
-          <li class="nav-item" id="logoutBtnContainer" style="display: none;">
-            <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
-          </li>
+        </li>
+        <li class="nav-item" id="loginBtnContainer">
+          <a class="btn btn-success" id="loginBtn" href="./login.html">Signin</a>
+        </li>
+        <li class="nav-item" id="logoutBtnContainer" style="display: none;">
+          <a class="btn btn-danger" id="logoutBtn" onclick="handleLogoutButton()">Logout</a>
+        </li>
           <!-- Show user's name if logged in -->
           <li class="nav-item ml-3">
             <span id="userFirstName" style="display: none;"></span>
@@ -192,6 +193,7 @@
 <!-- Bootstrap JS and dependencies -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/home.js"></script>
 
 <script>
   

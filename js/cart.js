@@ -98,7 +98,7 @@ $(document).ready(function() {
                 localStorage.setItem('products', JSON.stringify(products));
                 displayCartItems();
             } else {
-                alert('Sorry!!! product is out of stock');
+                alert('Sorry!!! we dont have any more products');
             }
         }
     }

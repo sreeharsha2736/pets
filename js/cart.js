@@ -54,31 +54,52 @@ $(document).ready(function() {
         var cartItems = JSON.parse(localStorage.getItem("cartItems"));
         var updatedCartItems = cartItems.filter(item => item.petTitle !== title);
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    
+        // Update inventory in products array
+        var product = products.find(p => p.title === title);
+        if (product) {
+            product.inventory += cartItems.find(item => item.petTitle === title).count;
+            localStorage.setItem('products', JSON.stringify(products));
+        }
+    
         displayCartItems();
     }
-
+    
     function reduceItemCount(title) {
         var cartItems = JSON.parse(localStorage.getItem("cartItems"));
         var itemIndex = cartItems.findIndex(item => item.petTitle === title);
         if (itemIndex !== -1) {
             cartItems[itemIndex].count--;
             if (cartItems[itemIndex].count === 0) {
-                cartItems.splice(itemIndex, 1); // Remove item if count becomes zero
+                removeFromCart(title); // Remove item if count becomes zero
+            } else {
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                // Update inventory in products array
+                var product = products.find(p => p.title === title);
+                if (product) {
+                    product.inventory++;
+                    localStorage.setItem('products', JSON.stringify(products));
+                }
+                displayCartItems();
             }
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            displayCartItems();
         }
     }
-
+    
     function increaseItemCount(title) {
         var cartItems = JSON.parse(localStorage.getItem("cartItems"));
         var itemIndex = cartItems.findIndex(item => item.petTitle === title);
         if (itemIndex !== -1) {
             cartItems[itemIndex].count++;
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            // Update inventory in products array
+            var product = products.find(p => p.title === title);
+            if (product && product.inventory > 0) {
+                product.inventory--;
+                localStorage.setItem('products', JSON.stringify(products));
+            }
             displayCartItems();
         }
     }
-
+    
     displayCartItems();
 });

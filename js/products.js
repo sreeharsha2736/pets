@@ -4,15 +4,15 @@ var products = [];
 if (!localStorage.getItem('products')) {
   // If products are not present, set default products and save them to local storage
   products = [
-    { title: 'Dog Food', images: ['../img/dog_food.jpg', '../img/dog_food2.jpg', '../img/dog_food3.jpg'], description: 'Premium dog food made with natural ingredients.', price: 49.99, inventory: 10 },
-    { title: 'Cat Litter', images: ['../img/cat_litter.png', '../img/cat_litter2.png', '../img/cat_litter3.png'], description: 'Clumping cat litter for easy cleanup.', price: 19.99, inventory: 20 },
-    { title: 'Cat Tree', images: ['../img/cat_tree.jpg', '../img/cat_tree2.jpg', '../img/cat_tree3.jpg'], description: 'Large cat tree with multiple levels.', price: 99.99, inventory: 15 },
-    { title: 'Fish Tank', images: ['../img/fish_tank.jpg', '../img/fish_tank2.jpg', '../img/fish_tank3.jpg'], description: 'Stylish aquarium for your aquatic pets.', price: 99.99, inventory: 8 },
-    { title: 'Bird Cage', images: ['../img/bird_cage.jpeg', '../img/bird_cage2.jpeg', '../img/bird_cage3.jpeg'], description: 'Spacious cage for your feathered friend.', price: 79.99, inventory: 12 },
-    { title: 'Hamster Wheel', images: ['../img/hamster_wheel.jpg', '../img/hamster_wheel2.jpg', '../img/hamster_wheel3.jpg'], description: 'Exercise wheel for your hamster.', price: 9.99, inventory: 25 },
-    { title: 'Rabbit Hutch', images: ['../img/rabbit_hutch.jpg', '../img/rabbit_hutch2.jpg', '../img/rabbit_hutch3.jpg'], description: 'Outdoor hutch for your pet rabbit.', price: 129.99, inventory: 5 },
-    { title: 'Guinea Pig Bedding', images: ['../img/guinea_pig_bedding.jpg', '../img/guinea_pig_bedding2.jpg', '../img/guinea_pig_bedding3.jpg'], description: 'Soft bedding for your guinea pig.', price: 14.99, inventory: 18 },
-    { title: 'Turtle Tank', images: ['../img/turtle_tank.jpg', '../img/turtle_tank2.jpg', '../img/turtle_tank3.jpg'], description: 'Large tank for your pet turtle.', price: 149.99, inventory: 3 }
+    { title: 'Dog Food', images: ['../img/dog_food.jpg', '../img/dog_food2.jpg', '../img/dog_food3.jpg'], description: 'Premium dog food made with natural ingredients.', price: 49.99, inventory: 3, actualInventory: 3, },
+    { title: 'Cat Litter', images: ['../img/cat_litter.png', '../img/cat_litter2.png', '../img/cat_litter3.png'], description: 'Clumping cat litter for easy cleanup.', price: 19.99, inventory: 10, actualInventory: 10 },
+    { title: 'Cat Tree', images: ['../img/cat_tree.jpg', '../img/cat_tree2.jpg', '../img/cat_tree3.jpg'], description: 'Large cat tree with multiple levels.', price: 99.99, inventory: 15 , actualInventory: 15 },
+    { title: 'Fish Tank', images: ['../img/fish_tank.jpg', '../img/fish_tank2.jpg', '../img/fish_tank3.jpg'], description: 'Stylish aquarium for your aquatic pets.', price: 99.99, inventory: 8 , actualInventory: 8 },
+    { title: 'Bird Cage', images: ['../img/bird_cage.jpeg', '../img/bird_cage2.jpeg', '../img/bird_cage3.jpeg'], description: 'Spacious cage for your feathered friend.', price: 79.99, inventory: 12 , actualInventory: 12 },
+    { title: 'Hamster Wheel', images: ['../img/hamster_wheel.jpg', '../img/hamster_wheel2.jpg', '../img/hamster_wheel3.jpg'], description: 'Exercise wheel for your hamster.', price: 9.99, inventory: 25 , actualInventory: 25 },
+    { title: 'Rabbit Hutch', images: ['../img/rabbit_hutch.jpg', '../img/rabbit_hutch2.jpg', '../img/rabbit_hutch3.jpg'], description: 'Outdoor hutch for your pet rabbit.', price: 129.99, inventory: 5 , actualInventory: 5 },
+    { title: 'Guinea Pig Bedding', images: ['../img/guinea_pig_bedding.jpg', '../img/guinea_pig_bedding2.jpg', '../img/guinea_pig_bedding3.jpg'], description: 'Soft bedding for your guinea pig.', price: 14.99, inventory: 18, actualInventory: 18 },
+    { title: 'Turtle Tank', images: ['../img/turtle_tank.jpg', '../img/turtle_tank2.jpg', '../img/turtle_tank3.jpg'], description: 'Large tank for your pet turtle.', price: 149.99, inventory: 3 , actualInventory: 3 }
   ];
   localStorage.setItem('products', JSON.stringify(products));
 } else {
@@ -90,6 +90,7 @@ function handleAddCart(productTitle, button) {
         price: product.price, 
         count: 1, 
         inventory: product.inventory,
+        actualInventory:product.actualInventory,
         description: product.description
       });
     }
@@ -109,7 +110,6 @@ function handleAddCart(productTitle, button) {
     alert('Product is out of stock!');
   }
 }
-
 
 
 function updateAvailableProductsCount() {

@@ -13,7 +13,7 @@ $(document).ready(function() {
                     $productDiv.html(`
                         <div class="card h-100">
                             <div class="image-container">
-                                <a href="./pets.html"><img class="card-img"  src="${product.images[0]}" alt="${product.title}"></a>
+                                <a href="./products.html"><img class="card-img"  src="${product.images[0]}" alt="${product.title}"></a>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5>
@@ -89,15 +89,17 @@ $(document).ready(function() {
         var cartItems = JSON.parse(localStorage.getItem("cartItems"));
         var itemIndex = cartItems.findIndex(item => item.petTitle === title);
         if (itemIndex !== -1) {
-            cartItems[itemIndex].count++;
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            // Update inventory in products array
             var product = products.find(p => p.title === title);
-            if (product && product.inventory > 0) {
+            if (cartItems[itemIndex].count < product.actualInventory) {
+                cartItems[itemIndex].count++;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                // Update inventory in products array
                 product.inventory--;
                 localStorage.setItem('products', JSON.stringify(products));
+                displayCartItems();
+            } else {
+                alert('Sorry!!! product is out of stock');
             }
-            displayCartItems();
         }
     }
     
